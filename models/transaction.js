@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-		 static associate(models) {
-			this.belongsTo(models.Transaction, {
-				key: 'codebar',
+		static associate(models) {
+			this.hasOne(models.Payable, {
+				sourceKey: 'codebar',
 				foreignKey: 'codebar'
 			})
 		}
@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     payment_date: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'Transaction',
+		modelName: 'Transaction',
+		underscored: true
   });
   return Transaction;
 };

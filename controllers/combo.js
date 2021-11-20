@@ -6,5 +6,4 @@ const combo = require('../models').Combo; module.exports = {
 			.then(combo => res.status(200).send(combo))
 			.catch(error => res.status(400).send(error))
 	}
-
 };

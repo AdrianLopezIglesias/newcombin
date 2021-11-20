@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-		 static associate(models) {
+		static associate(models) {
 			this.hasMany(models.Transaction, {
-				key: 'codebar',
+				sourceKey: 'codebar',
 				foreignKey: 'codebar'
 			})
 		}
@@ -22,10 +22,14 @@ module.exports = (sequelize, DataTypes) => {
     due_date: DataTypes.DATE,
     value: DataTypes.INTEGER,
     status: DataTypes.STRING,
-    codebar: DataTypes.INTEGER
+		codebar: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+			unique: true }
   }, {
     sequelize,
     modelName: 'Payable',
+		underscored: true
   });
   return Payable;
 };

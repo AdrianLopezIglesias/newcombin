@@ -12,6 +12,13 @@ require('dotenv').config()
 const productController = require('./controllers/product')
 const cartController = require('./controllers/cart')
 const comboController = require('./controllers/combo')
+const payableController = require('./controllers/payable')
+const transactionController = require('./controllers/transaction')
+
+app.get('/payables', payableController.index)
+app.post('/payables', payableController.create)
+app.get('/transactions', transactionController.index)
+app.post('/transactions', transactionController.create)
 
 app.get('/products/', productController.index)
 app.get('/combos/', comboController.index)

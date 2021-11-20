@@ -25,13 +25,14 @@ module.exports = {
       },
       codebar: {
         primaryKey: true,
-        type: Sequelize.INTEGER
+				type: Sequelize.INTEGER,
+				unique: true
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }

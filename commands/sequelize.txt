@@ -1,10 +1,3 @@
-sequelize-cli model:generate --name Product --attributes name:string,value:integer,tax:integer
-sequelize-cli model:generate --name ComboProduct --attributes product_id:integer,combo_id:integer,discount:integer
-sequelize-cli model:generate --name Combo --attributes name:string,limit:integer,priority:integer
-sequelize-cli model:generate --name Cart --attributes product_id:integer,closed:integer,discount_used:string 
-
-sequelize seed:generate --name seed-database
-
 sequelize model:create --name Transaction --attributes payment_method:string, credit_card_number:integer, payment_value:integer, codebar:integer, payment_date:date
 
 sequelize model:create --name Payable --attributes type:string, description:string, due_date:date, value:integer, status:string, codebar:integer

@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "b2502fd4-4561-4fad-bf49-878d5c58df40",
+		"name": "DigitalCombin Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get payables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/payables",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post payables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL0RFVi5GcmVlbGFuY2VcL25hdHVyYWwtZGlldC1hcGlcL3B1YmxpY1wvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE2MzA3MTIxOTYsImV4cCI6MTYzMDcxNTc5NiwibmJmIjoxNjMwNzEyMTk2LCJqdGkiOiJnU2lKYkZ0Wk02dk9ZVzZIIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.whwsdPshyRu6RR15S0njH8BAEbJ2z11CN8u6z_3r0Nc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"agua\",\r\n    \"description\": \"aguas de corrientes\",\r\n    \"due_date\": \"01/06/1990\",\r\n    \"value\": 2500,\r\n    \"status\": \"pending\",\r\n    \"barcode\": 15124312\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/payables",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post transaction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payment_method\": \"agua\",\r\n    \"credit_card_number\": \"1111222233334444\",\r\n    \"payment_value\": 2500,\r\n    \"codebar\": 15124312\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get transactions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get transactions from",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions?from=11/19/2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "11/19/2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get transactions to",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions?to=11/16/2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "to",
+							"value": "11/16/2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get transactions from & to",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions?from=11/14/2021&to=11/16/2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "11/14/2021"
+						},
+						{
+							"key": "to",
+							"value": "11/16/2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get payables type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\"id_customer\": 51337}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/payables?type=luz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payables"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "luz"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

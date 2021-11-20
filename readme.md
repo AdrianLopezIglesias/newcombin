@@ -11,6 +11,8 @@ npm run dev
 
 
 ## Routes
+La colección de Postman en JSON está en './NewCombin Challenge.postman_collection.json'
+
 ### Create payable
 post.http://localhost:3000/payables
 ```
